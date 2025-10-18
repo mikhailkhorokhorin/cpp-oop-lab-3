@@ -21,6 +21,8 @@ class Rectangle : public Figure {
     Rectangle& operator=(const Rectangle& other);
     Rectangle& operator=(Rectangle&& other) noexcept;
 
+    bool operator==(const Rectangle& other) const;
     bool operator==(const Figure& other) const override;
+
     std::unique_ptr<Figure> clone() const override;
 };

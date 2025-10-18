@@ -1,5 +1,7 @@
 #include "../include/square.h"
 
+#include <algorithm>
+
 Square::Square() {
     size_ = 4;
     points_ = new Point[size_];
@@ -69,13 +71,32 @@ Square& Square::operator=(Square&& other) noexcept {
     return *this;
 }
 
+bool Square::operator==(const Square& other) const {
+    if (size_ != other.size_)
+        return false;
+
+    Point sorted1[4];
+    Point sorted2[4];
+    std::copy(points_, points_ + size_, sorted1);
+    std::copy(other.points_, other.points_ + other.size_, sorted2);
+
+    auto cmp = [](const Point& a, const Point& b) {
+        return (a.x < b.x) || (a.x == b.x && a.y < b.y);
+    };
+
+    std::sort(sorted1, sorted1 + size_, cmp);
+    std::sort(sorted2, sorted2 + size_, cmp);
+
+    for (size_t i = 0; i < size_; ++i)
+        if (!(sorted1[i] == sorted2[i]))
+            return false;
+
+    return true;
+}
+
 bool Square::operator==(const Figure& other) const {
-    if (const Square* s = dynamic_cast<const Square*>(&other)) {
-        for (size_t i = 0; i < size_; ++i)
-            if (points_[i].x != s->points_[i].x || points_[i].y != s->points_[i].y)
-                return false;
-        return true;
-    }
+    if (const Square* square = dynamic_cast<const Square*>(&other))
+        return *this == *square;
     return false;
 }
 

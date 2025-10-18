@@ -21,6 +21,8 @@ class Square : public Figure {
     Square& operator=(const Square& other);
     Square& operator=(Square&& other) noexcept;
 
+    bool operator==(const Square& other) const;
     bool operator==(const Figure& other) const override;
+
     std::unique_ptr<Figure> clone() const override;
 };

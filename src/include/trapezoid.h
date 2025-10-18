@@ -21,6 +21,8 @@ class Trapezoid : public Figure {
     Trapezoid& operator=(const Trapezoid& other);
     Trapezoid& operator=(Trapezoid&& other) noexcept;
 
+    bool operator==(const Trapezoid& other) const;
     bool operator==(const Figure& other) const override;
+
     std::unique_ptr<Figure> clone() const override;
 };

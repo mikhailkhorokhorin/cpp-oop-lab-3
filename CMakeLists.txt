@@ -30,17 +30,18 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_executable(tests
-    src/tests/point.cpp
-    src/tests/square.cpp
-    src/tests/rectangle.cpp
-    src/tests/trapezoid.cpp
+    src/tests/unit.cpp
     src/tests/array.cpp
-    src/core/point.cpp
-    src/core/figure.cpp
-    src/core/square.cpp
-    src/core/rectangle.cpp
-    src/core/trapezoid.cpp
+    src/tests/point.cpp
+    src/tests/rectangle.cpp
+    src/tests/square.cpp
+    src/tests/trapezoid.cpp
     src/core/array.cpp
+    src/core/figure.cpp
+    src/core/point.cpp
+    src/core/rectangle.cpp
+    src/core/square.cpp
+    src/core/trapezoid.cpp
 )
 
 target_link_libraries(tests GTest::gtest_main)

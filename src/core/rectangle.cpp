@@ -1,5 +1,7 @@
 #include "../include/rectangle.h"
 
+#include <algorithm>
+
 Rectangle::Rectangle() {
     size_ = 4;
     points_ = new Point[size_];
@@ -70,15 +72,32 @@ Rectangle& Rectangle::operator=(Rectangle&& other) noexcept {
     return *this;
 }
 
+bool Rectangle::operator==(const Rectangle& other) const {
+    if (size_ != other.size_)
+        return false;
+
+    Point sorted1[4];
+    Point sorted2[4];
+    std::copy(points_, points_ + size_, sorted1);
+    std::copy(other.points_, other.points_ + other.size_, sorted2);
+
+    auto cmp = [](const Point& a, const Point& b) {
+        return (a.x < b.x) || (a.x == b.x && a.y < b.y);
+    };
+
+    std::sort(sorted1, sorted1 + size_, cmp);
+    std::sort(sorted2, sorted2 + size_, cmp);
+
+    for (size_t i = 0; i < size_; ++i)
+        if (!(sorted1[i] == sorted2[i]))
+            return false;
+
+    return true;
+}
+
 bool Rectangle::operator==(const Figure& other) const {
-    if (const Rectangle* r = dynamic_cast<const Rectangle*>(&other)) {
-        for (size_t i = 0; i < size_; ++i) {
-            if (std::abs(points_[i].x - r->points_[i].x) > 1e-9 ||
-                std::abs(points_[i].y - r->points_[i].y) > 1e-9)
-                return false;
-        }
-        return true;
-    }
+    if (const Rectangle* rectangle = dynamic_cast<const Rectangle*>(&other))
+        return *this == *rectangle;
     return false;
 }
 

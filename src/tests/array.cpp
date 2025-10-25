@@ -79,10 +79,9 @@ TEST(ArrayTest, OperatorIndexPolymorphic) {
 
 TEST(ArrayTest, GetAllAreaPolymorphic) {
     Array array;
-    array.addFigure(new Square({0, 0}, {0, 2}, {2, 2}, {2, 0}));     // area=4
-    array.addFigure(new Rectangle({0, 0}, {0, 3}, {3, 3}, {3, 0}));  // area=9
-    array.addFigure(new Trapezoid({0, 0}, {2, 0}, {3, 2}, {1, 2}));  // area=4
+    array.addFigure(new Square({0, 0}, {0, 2}, {2, 2}, {2, 0}));
+    array.addFigure(new Rectangle({0, 0}, {0, 3}, {3, 3}, {3, 0}));
+    array.addFigure(new Trapezoid({0, 0}, {2, 0}, {3, 2}, {1, 2}));
 
     EXPECT_DOUBLE_EQ(array.getAllArea(), 4 + 9 + 4);
 }
-

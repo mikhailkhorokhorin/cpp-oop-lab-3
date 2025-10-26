@@ -24,16 +24,16 @@ int main() {
     std::cout << "Center: (" << trapezoid.getCenter().x << ", " << trapezoid.getCenter().y << ") ";
     std::cout << "Area: " << static_cast<double>(trapezoid) << std::endl << std::endl;
 
-    Array arr(3);
-    arr.addFigure(new Square(square));
-    arr.addFigure(new Rectangle(rectangle));
-    arr.addFigure(new Trapezoid(trapezoid));
+    Array array(3);
+    array.addFigure(new Square(square));
+    array.addFigure(new Rectangle(rectangle));
+    array.addFigure(new Trapezoid(trapezoid));
 
-    arr.printFigures();
+    array.printFigures();
 
-    std::cout << "Total area: " << arr.getAllArea() << std::endl;
+    std::cout << "Total area: " << array.getAllArea() << std::endl;
 
-    Figure* figure = arr[1];
+    Figure* figure = array[1];
     std::cout << "Figure at index 1: ";
     figure->print(std::cout);
     std::cout << "Area: " << static_cast<double>(*figure) << std::endl;

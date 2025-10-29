@@ -35,13 +35,6 @@ Array::Array(Array&& other) noexcept
     other.capacity_ = 0;
 }
 
-Array& Array::operator=(Array other) {
-    std::swap(figures_, other.figures_);
-    std::swap(size_, other.size_);
-    std::swap(capacity_, other.capacity_);
-    return *this;
-}
-
 Array& Array::operator=(Array&& other) noexcept {
     std::swap(figures_, other.figures_);
     std::swap(size_, other.size_);

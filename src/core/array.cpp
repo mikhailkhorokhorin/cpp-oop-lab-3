@@ -1,4 +1,4 @@
-#include "../include/array.hpp"
+#include "array.hpp"
 
 void Array::resize(size_t capacity) {
     Figure** figures = new Figure*[capacity];

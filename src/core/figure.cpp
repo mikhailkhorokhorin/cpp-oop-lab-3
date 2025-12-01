@@ -1,4 +1,4 @@
-#include "../include/figure.hpp"
+#include "figure.hpp"
 
 Figure::~Figure() {
     delete[] points_;

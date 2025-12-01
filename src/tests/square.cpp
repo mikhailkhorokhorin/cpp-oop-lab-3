@@ -1,4 +1,4 @@
-#include "../include/square.hpp"
+#include "square.hpp"
 
 #include <gtest/gtest.h>
 

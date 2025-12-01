@@ -1,8 +1,8 @@
-#include "include/array.hpp"
-#include "include/point.hpp"
-#include "include/rectangle.hpp"
-#include "include/square.hpp"
-#include "include/trapezoid.hpp"
+#include "array.hpp"
+#include "point.hpp"
+#include "rectangle.hpp"
+#include "square.hpp"
+#include "trapezoid.hpp"
 
 int main() {
     Square square({0, 0}, {2, 0}, {2, 2}, {0, 2});

@@ -1,4 +1,4 @@
-#include "../include/array.h"
+#include "../include/array.hpp"
 
 void Array::resize(size_t capacity) {
     Figure** figures = new Figure*[capacity];
@@ -39,6 +39,27 @@ Array& Array::operator=(Array&& other) noexcept {
     std::swap(figures_, other.figures_);
     std::swap(size_, other.size_);
     std::swap(capacity_, other.capacity_);
+    return *this;
+}
+
+Array& Array::operator=(const Array& other) {
+    if (this == &other)
+        return *this;
+
+    Figure** figures = new Figure*[other.capacity_];
+    for (size_t i = 0; i < other.size_; ++i)
+        figures[i] = other.figures_[i]->clone().release();
+    for (size_t i = other.size_; i < other.capacity_; ++i)
+        figures[i] = nullptr;
+
+    for (size_t i = 0; i < size_; ++i)
+        delete figures_[i];
+    delete[] figures_;
+
+    figures_ = figures;
+    size_ = other.size_;
+    capacity_ = other.capacity_;
+
     return *this;
 }
 

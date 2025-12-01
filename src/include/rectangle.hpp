@@ -1,8 +1,7 @@
 #pragma once
 #include <cmath>
-#include <iostream>
 
-#include "figure.h"
+#include "figure.hpp"
 
 class Rectangle : public Figure {
    protected:

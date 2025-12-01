@@ -1,10 +1,10 @@
-#include "../include/array.h"
+#include "../include/array.hpp"
 
 #include <gtest/gtest.h>
 
-#include "../include/rectangle.h"
-#include "../include/square.h"
-#include "../include/trapezoid.h"
+#include "../include/rectangle.hpp"
+#include "../include/square.hpp"
+#include "../include/trapezoid.hpp"
 
 TEST(ArrayTest, AddVariousFigures) {
     Array array;

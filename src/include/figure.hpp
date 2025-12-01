@@ -1,8 +1,7 @@
 #pragma once
-#include <iostream>
 #include <memory>
 
-#include "point.h"
+#include "point.hpp"
 
 class Figure {
    protected:

@@ -1,6 +1,4 @@
-#include <iostream>
-
-#include "figure.h"
+#include "figure.hpp"
 
 class Array {
    private:
@@ -16,7 +14,7 @@ class Array {
     Array(const Array& other);
     Array(Array&& other) noexcept;
 
-    Array& operator=(Array other);
+    Array& operator=(const Array& other);
     Array& operator=(Array&& other) noexcept;
     ~Array();
 

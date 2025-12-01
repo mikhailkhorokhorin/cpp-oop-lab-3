@@ -1,4 +1,4 @@
-#include "../include/rectangle.h"
+#include "../include/rectangle.hpp"
 
 #include <algorithm>
 

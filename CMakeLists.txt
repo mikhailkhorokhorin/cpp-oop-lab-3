@@ -8,12 +8,12 @@ include_directories(src/include)
 
 add_executable(lab
     src/main.cpp
-    src/core/point.cpp
-    src/core/figure.cpp
-    src/core/square.cpp
-    src/core/rectangle.cpp
-    src/core/trapezoid.cpp
     src/core/array.cpp
+    src/core/figure.cpp
+    src/core/point.cpp
+    src/core/rectangle.cpp
+    src/core/square.cpp
+    src/core/trapezoid.cpp
 )
 
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)

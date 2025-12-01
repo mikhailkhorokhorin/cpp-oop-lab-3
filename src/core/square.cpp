@@ -1,4 +1,4 @@
-#include "../include/square.h"
+#include "../include/square.hpp"
 
 #include <algorithm>
 

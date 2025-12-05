@@ -1,7 +1,5 @@
 #include "rectangle.hpp"
 
-#include <algorithm>
-
 Rectangle::Rectangle() {
     size_ = 4;
     points_ = new Point[size_];

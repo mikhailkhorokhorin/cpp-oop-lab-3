@@ -1,7 +1,5 @@
 #include "square.hpp"
 
-#include <algorithm>
-
 Square::Square() {
     size_ = 4;
     points_ = new Point[size_];

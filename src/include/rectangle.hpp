@@ -1,8 +1,10 @@
 #pragma once
 
+#include <algorithm>
 #include <cmath>
 
 #include "figure.hpp"
+
 
 class Rectangle : public Figure {
    protected:

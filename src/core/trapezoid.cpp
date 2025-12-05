@@ -1,7 +1,5 @@
 #include "trapezoid.hpp"
 
-#include <algorithm>
-
 Trapezoid::Trapezoid() {
     size_ = 4;
     points_ = new Point[size_];
